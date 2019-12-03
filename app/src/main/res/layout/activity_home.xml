@@ -112,6 +112,31 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/div3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ThirdCurrencyClick3"
+        android:weightSum="100"
+
+        app:layout_constraintTop_toBottomOf="@id/div1">
+
+        <TextView
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="25"
+            android:textSize="32sp"
+            />
+
+        <TextView
+            android:id="@+id/textout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="75" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -123,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/div2"
+        app:layout_constraintTop_toBottomOf="@id/div3"
         app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
@@ -232,14 +257,15 @@
                 tools:layout_editor_absoluteY="171dp" />
 
             <Button
-                android:id="@+id/bt44"
+                android:id="@+id/bt_third_currency"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
                 android:background="#FCFCFC"
-                android:text="44"
+                android:onClick="ThirdCurrencyClick3"
+                android:text="third"
                 android:textAlignment="center"
-                android:textSize="32sp"
+                android:textSize="24sp"
                 tools:layout_editor_absoluteX="309dp"
                 tools:layout_editor_absoluteY="171dp" />
         </LinearLayout>
@@ -332,6 +358,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="25"
                 android:background="#FCFCFC"
+                android:onClick="onDigitClick"
                 android:text="0"
                 android:textAlignment="center"
                 android:textSize="32sp"

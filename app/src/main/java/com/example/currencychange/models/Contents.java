@@ -41,8 +41,10 @@ public class Contents {
     public static int select =1;
     public static String nameIn;
     public static String nameOut;
+    public static String nameOut3;
     public static int posIn;
     public static int posOut;
+    public static int posOut3;
 
 
 
