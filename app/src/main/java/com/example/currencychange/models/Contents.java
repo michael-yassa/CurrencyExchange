@@ -30,7 +30,8 @@ public class Contents {
             "XAF", "XAG","XAU" , "XCD", "XDR", "XOF", "XPF",
             "YER",
             "ZAR","ZMK", "ZMW","ZWL"};*/
-
+         public static List<String> favourName=new ArrayList<>();
+         public static List<Integer> favourPostion = new ArrayList<>();
     public static List<Object> currencyValue=new ArrayList<>() ;
 
    public  static List<Double> currencyValues = new ArrayList<>();

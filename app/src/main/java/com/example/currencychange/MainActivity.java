@@ -53,6 +53,7 @@ public class MainActivity extends BaseActivity {
 
         initView();
         getSourses();
+        showFavourInTab();
     }
 
     private void initView() {
@@ -60,7 +61,7 @@ public class MainActivity extends BaseActivity {
         recyclerView = findViewById(R.id.recycler_view);
         progressBar = findViewById(R.id.prg_bar);
 
-        favour=findViewById(R.id.favour);
+       // favour=findViewById(R.id.favour);
     }
 
     CurrencyResponse currencyResponse;
@@ -81,9 +82,9 @@ public class MainActivity extends BaseActivity {
                             fillCurrencyList();
                             intRecyclerView();
 
-                          progressBar.clearFocus();
 
-                          //  showResponseInTab();
+
+
                         }
                         else{
                             showMessage("erooooorrrr",getString(R.string.ok));
@@ -96,28 +97,38 @@ public class MainActivity extends BaseActivity {
                     }
                 });
     }
-                 private void showResponseInTab( ){
-                    // Toast.makeText(this, ""+rt.size(), Toast.LENGTH_SHORT).show();
-                  //for (int i=0; i<rt.size();i++){
-                   //   Rates ratess = rt.get(i);
+                 public void showFavourInTab( ){
+                 if(favourName ==null)return;
+                   for(int i = 0 ; i<favourName.size();i++){
                       TabLayout.Tab tab = tabLayout.newTab();
-                      tab.setText(ratesourses.toString());
-                      tab.setTag(ratesourses);
-                      tabLayout.addTab(tab);
-                 // }
+                      tab.setText(favourName.get(i));
+                      tab.setTag(favourPostion.get(i));
+                      tabLayout.addTab(tab);}
+                   tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+                       @Override
+                       public void onTabSelected(TabLayout.Tab tab) {
 
-              //  for( Rates rates : ratesourses){
+                           Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                           intent.putExtra("name", tab.getText());
+                           intent.putExtra("pos", (Integer) tab.getTag());
 
+                           startActivity(intent);
+                       }
 
-                // tab.setText(ratesourses.getALL().toString());
+                       @Override
+                       public void onTabUnselected(TabLayout.Tab tab) {
 
-             //    }
+                       }
 
+                       @Override
+                       public void onTabReselected(TabLayout.Tab tab) {
 
-
+                       }
+                   });
                  }
 
-               public void intRecyclerView(){
+
+                 public void intRecyclerView(){
          adapter= new CurrencyAdapter(currencyNamee);
 
                    layoutManager=new GridLayoutManager(this,2);
@@ -128,8 +139,11 @@ public class MainActivity extends BaseActivity {
                        @Override
                        public void onItemClick(int pos, String name) {
 
+                          favourName.add(name);
+                          favourPostion.add(pos);
 
-                          favour.setText(name);
+
+                           showFavourInTab();
 
                            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                            intent.putExtra("name", name);
@@ -162,10 +176,6 @@ public class MainActivity extends BaseActivity {
 
 
                                }}
-
-
-                                  //   Toast.makeText(this, ""+ Contents.currencyNamee, Toast.LENGTH_LONG).show();
-
 
                                }
 

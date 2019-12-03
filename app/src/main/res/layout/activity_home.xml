@@ -25,6 +25,7 @@
             android:gravity="center"
             android:text="@string/from"
             android:textSize="24sp"
+            android:textColor="#000"
             app:layout_constraintHeight_percent=".25"
             app:layout_constraintTop_toTopOf="parent"
 
@@ -52,7 +53,7 @@
             android:layout_height="0dp"
             android:text="1"
             android:textSize="32sp"
-            app:layout_constraintHeight_percent=".25"
+            app:layout_constraintHeight_percent=".3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view1" />
 
@@ -79,6 +80,7 @@
             android:layout_height="0dp"
             android:gravity="center"
             android:text="TO"
+            android:textColor="#000"
             android:textSize="24sp"
             app:layout_constraintHeight_percent=".25"
             app:layout_constraintTop_toTopOf="parent"
@@ -89,8 +91,6 @@
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-
-
             android:gravity="center"
             android:onClick="onImageClick2"
             android:textSize="32sp"
@@ -104,7 +104,7 @@
             android:layout_height="0dp"
             android:gravity="center"
             android:textSize="24sp"
-            app:layout_constraintHeight_percent=".25"
+            app:layout_constraintHeight_percent=".3"
 
 
             app:layout_constraintStart_toStartOf="parent"
@@ -356,13 +356,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/bt9" />
 
             <Button
-                android:id="@+id/temp"
+                android:id="@+id/rev"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
                 android:layout_weight="25"
                 android:background="#FCFCFC"
-                android:text="temp"
+                android:onClick="onRevClick"
+                android:text="REV"
                 android:textAlignment="center"
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"

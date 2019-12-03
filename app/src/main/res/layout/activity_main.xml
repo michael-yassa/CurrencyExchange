@@ -5,12 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-   <TextView
-       android:id="@+id/favour"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:textSize="32sp"
-       />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
@@ -26,8 +21,10 @@
         app:tabMode="scrollable"
         app:tabGravity="center"
         app:tabTextColor="#000"
+
         app:tabSelectedTextColor="@color/colorAccent"
         app:tabBackground="@color/colorPrimary"
+        android:scrollbarSize="@android:dimen/app_icon_size"
 
 
         >
