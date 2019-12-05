@@ -6,4 +6,7 @@
     <color name="colorPrimaryDark">#09337B</color>
     <color name="colorAccent">#007896</color>
     <color name="color_gray">#564F4F</color>
+    <color name="color_cyan">#2E7AB7</color>
+    <color name="color_blue">#055597</color>
+    <color name="color_white">#FFF</color>
 </resources>

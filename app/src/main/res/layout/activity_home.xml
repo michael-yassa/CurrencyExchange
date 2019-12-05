@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textDirection="firstStrongRtl"
     tools:context=".HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,9 +26,12 @@
             android:gravity="center"
             android:text="@string/from"
             android:textSize="24sp"
-            android:textColor="#000"
+
             app:layout_constraintHeight_percent=".25"
             app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:textStyle="bold"
 
             />
 
@@ -38,7 +42,9 @@
 
             android:gravity="center"
             android:onClick="onImageClick1"
-
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:textStyle="bold"
             android:textSize="32sp"
             app:layout_constraintHeight_percent=".5"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,8 +57,11 @@
             android:id="@+id/input1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:textSize="24sp"
+            android:textColor="#000"
+            android:textAlignment="center"
             android:text="1"
-            android:textSize="32sp"
+            android:textStyle="bold"
             app:layout_constraintHeight_percent=".3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view1" />
@@ -80,11 +89,13 @@
             android:layout_height="0dp"
             android:gravity="center"
             android:text="TO"
-            android:textColor="#000"
+
             android:textSize="24sp"
             app:layout_constraintHeight_percent=".25"
             app:layout_constraintTop_toTopOf="parent"
-
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:textStyle="bold"
             />
 
         <TextView
@@ -94,6 +105,10 @@
             android:gravity="center"
             android:onClick="onImageClick2"
             android:textSize="32sp"
+            android:text="  AED "
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:textStyle="bold"
             app:layout_constraintHeight_percent=".5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_out" />
@@ -104,8 +119,11 @@
             android:layout_height="0dp"
             android:gravity="center"
             android:textSize="24sp"
-            app:layout_constraintHeight_percent=".3"
 
+            app:layout_constraintHeight_percent=".3"
+            android:textColor="#000"
+            android:textAlignment="center"
+            android:textStyle="bold"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view2" />
@@ -114,33 +132,52 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/div3"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="ThirdCurrencyClick3"
         android:weightSum="100"
 
         app:layout_constraintTop_toBottomOf="@id/div1">
+
+        <TextView
+            android:id="@+id/titelin3"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="32dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/view3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="25"
+            android:textAlignment="center"
+            android:textColor="#000"
             android:textSize="32sp"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textout3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="75" />
+            android:layout_weight="60"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/div4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#FCFCFC"
+
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -166,10 +203,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="25"
 
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="1"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp" />
 
             <Button
@@ -177,10 +215,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="2"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp" />
 
             <Button
@@ -188,22 +227,23 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="3"
                 android:textAlignment="center"
-                android:textSize="32sp"
 
-                />
+                android:textColor="#fff"
+                android:textSize="32sp" />
 
             <Button
                 android:id="@+id/bt11"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
-                android:text="11"
+
+                android:background="#3B29A8"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp" />
         </LinearLayout>
 
@@ -220,13 +260,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
 
                 android:onClick="onDigitClick"
                 android:text="4"
                 android:textAlignment="center"
-                android:textSize="32sp"
+                android:textColor="#fff"
 
+                android:textSize="32sp"
                 tools:layout_editor_absoluteX="12dp"
                 tools:layout_editor_absoluteY="128dp" />
 
@@ -235,10 +276,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="5"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 tools:layout_editor_absoluteX="103dp"
                 tools:layout_editor_absoluteY="171dp" />
@@ -248,10 +290,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="6"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 tools:layout_editor_absoluteX="206dp"
                 tools:layout_editor_absoluteY="171dp" />
@@ -261,10 +304,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
-                android:onClick="ThirdCurrencyClick3"
-                android:text="third"
+                android:background="#3B29A8"
+                android:onClick="addCurrency"
+                android:text="add"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="24sp"
                 tools:layout_editor_absoluteX="309dp"
                 tools:layout_editor_absoluteY="171dp" />
@@ -274,6 +318,7 @@
             android:id="@+id/row3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="#3914B9"
             android:weightSum="100"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/raw2">
@@ -283,10 +328,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="7"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 tools:layout_editor_absoluteX="88dp"
                 tools:layout_editor_absoluteY="383dp" />
@@ -296,10 +342,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="8"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 tools:layout_editor_absoluteX="162dp"
                 tools:layout_editor_absoluteY="317dp" />
@@ -309,10 +356,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="9"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 tools:layout_editor_absoluteX="250dp"
                 tools:layout_editor_absoluteY="317dp" />
@@ -322,10 +370,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
-                android:text="77"
+                android:background="#3B29A8"
+                android:onClick="ClearCurrency"
+                android:text="clear"
                 android:textAlignment="center"
-                android:textSize="32sp"
+                android:textColor="#fff"
+                android:textSize="24sp"
                 tools:layout_editor_absoluteX="338dp"
                 tools:layout_editor_absoluteY="317dp" />
         </LinearLayout>
@@ -334,6 +384,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="#3C1693"
             android:weightSum="100"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/row3">
@@ -344,10 +395,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="."
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 tools:layout_editor_absoluteX="88dp"
                 tools:layout_editor_absoluteY="383dp" />
@@ -357,47 +409,56 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onDigitClick"
                 android:text="0"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
+
                 tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="463dp" />
+                tools:layout_editor_absoluteY="463dp"
+                />
 
             <Button
                 android:id="@+id/del"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="24dp"
+
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="OnDelClick"
                 android:text="DEL"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/temp"
+                app:layout_constraintEnd_toStartOf="@id/rev"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/bt0"
-                app:layout_constraintTop_toBottomOf="@+id/bt9" />
+                app:layout_constraintTop_toBottomOf="@+id/bt9"
+
+                />
 
             <Button
                 android:id="@+id/rev"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="24dp"
+
                 android:layout_weight="25"
-                android:background="#FCFCFC"
+                android:background="#3B29A8"
                 android:onClick="onRevClick"
                 android:text="REV"
                 android:textAlignment="center"
+                android:textColor="#fff"
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/del"
-                app:layout_constraintTop_toBottomOf="@+id/bt77" />
+                app:layout_constraintTop_toBottomOf="@+id/bt77"
+
+                />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

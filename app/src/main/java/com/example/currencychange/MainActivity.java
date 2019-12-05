@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -25,6 +28,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +37,7 @@ import retrofit2.Response;
 import static com.example.currencychange.models.Contents.*;
 
 public class MainActivity extends BaseActivity {
+    EditText search;
     TabLayout tabLayout;
     RecyclerView recyclerView;
     CurrencyAdapter adapter;
@@ -53,17 +58,60 @@ public class MainActivity extends BaseActivity {
 
         initView();
         getSourses();
+        editSearch();
         showFavourInTab();
+        editSearch();
+
     }
 
     private void initView() {
         tabLayout = findViewById(R.id.tap_layout);
         recyclerView = findViewById(R.id.recycler_view);
         progressBar = findViewById(R.id.prg_bar);
+        search = findViewById(R.id.search);
 
        // favour=findViewById(R.id.favour);
     }
+    public void editSearch(){
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+              //  Toast.makeText(homeActivity, ""+currencyNamee, Toast.LENGTH_SHORT).show();
+              filter(editable.toString());
+            }
+        });
+    }
+
+
+    public void filter( String text){
+
+
+        for (int i = 0; i < currencyNamee.size(); i++) {
+            String itemSearch = currencyNamee.get(i);
+            if (itemSearch.toLowerCase().contains(text.toLowerCase())) {
+                filtredNameList.add(itemSearch);
+                 filtrePostionList.add(i);
+            }
+        }
+      //  Toast.makeText(this, ""+ filtredNameList, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+ filtrePostionList, Toast.LENGTH_SHORT).show();
+        //int vv= filtrePostionList.get(3);
+        //Toast.makeText(this, ""+vv, Toast.LENGTH_SHORT).show();
+
+        adapter.changeData(filtredNameList);
+        intRecyclerView(filtredNameList);
+
+    }
     CurrencyResponse currencyResponse;
         Rates ratesourses;
 
@@ -80,7 +128,8 @@ public class MainActivity extends BaseActivity {
                             ratesourses = response.body().getRates();
                            // Toast.makeText(MainActivity.this, "inAPIIIII", Toast.LENGTH_SHORT).show();
                             fillCurrencyList();
-                            intRecyclerView();
+                            intRecyclerView(currencyNamee);
+
 
 
 
@@ -128,19 +177,35 @@ public class MainActivity extends BaseActivity {
                  }
 
 
-                 public void intRecyclerView(){
-         adapter= new CurrencyAdapter(currencyNamee);
+                 public void intRecyclerView(final List<String> adapterList){
+         adapter= new CurrencyAdapter(adapterList);
 
                    layoutManager=new GridLayoutManager(this,2);
                    recyclerView.setLayoutManager(layoutManager);
                    recyclerView.setAdapter(adapter);
 
                    adapter.setOnClickListener(new CurrencyAdapter.OnClickListener() {
+
                        @Override
                        public void onItemClick(int pos, String name) {
+                           if (adapterList == filtredNameList) {
 
-                          favourName.add(name);
-                          favourPostion.add(pos);
+                               int newpos = filtrePostionList.get(pos);
+                               favourName.add(name);
+                               favourPostion.add(newpos);
+
+
+                               showFavourInTab();
+
+                               Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                               intent.putExtra("name", name);
+                               intent.putExtra("pos", newpos);
+
+                               startActivity(intent);
+                           }
+                           else {
+                           favourName.add(name);
+                           favourPostion.add(pos);
 
 
                            showFavourInTab();
@@ -150,6 +215,7 @@ public class MainActivity extends BaseActivity {
                            intent.putExtra("pos", pos);
 
                            startActivity(intent);
+                       }
 
                        }
                    });

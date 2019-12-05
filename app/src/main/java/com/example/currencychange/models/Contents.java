@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Contents {
    public static   List<String>currencyNamee=new ArrayList<>();
+
+
   /*  public static String [] CurrencyName ={"AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN",
             "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTC", "BTN", "BWP", "BYN",
             "BYR", "BZD",
@@ -39,12 +41,17 @@ public class Contents {
    public static List<Object> CurrencyNames = new ArrayList<>();
    // 1 mean input valur ---- 2 mean output value
     public static int select =1;
+    //1 mean add anther currency  2 mean clear crrency
+    public static int reverceCase;
     public static String nameIn;
     public static String nameOut;
     public static String nameOut3;
     public static int posIn;
     public static int posOut;
     public static int posOut3;
+    public static ArrayList<String> filtredNameList = new ArrayList<>();
+    public static ArrayList<Integer>filtrePostionList = new ArrayList<>();
+
 
 
 

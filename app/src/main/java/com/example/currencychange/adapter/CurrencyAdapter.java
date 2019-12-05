@@ -22,6 +22,7 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.ViewHo
 
     public CurrencyAdapter(List<String> ratesName) {
         this.ratesName = ratesName;
+
     }
 
     @NonNull
@@ -56,6 +57,10 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.ViewHo
     }
 
 
+    public void changeData(List<String> newsList){
+        this.ratesName=newsList;
+        notifyDataSetChanged();
+    }
           OnClickListener onClickListener;
 
     public void setOnClickListener(OnClickListener onClickListener) {
