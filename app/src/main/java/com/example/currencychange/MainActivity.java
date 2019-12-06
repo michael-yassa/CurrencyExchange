@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -124,12 +125,13 @@ public class MainActivity extends BaseActivity {
                     public void onResponse(Call<CurrencyResponse> call, Response<CurrencyResponse> response) {
                         if(true ==(response.body().getSuccess()
                         )){
-
+                                   View view;
                             ratesourses = response.body().getRates();
                            // Toast.makeText(MainActivity.this, "inAPIIIII", Toast.LENGTH_SHORT).show();
                             fillCurrencyList();
                             intRecyclerView(currencyNamee);
 
+                            progressBar.setVisibility(View.INVISIBLE);
 
 
 

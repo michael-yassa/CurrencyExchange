@@ -37,8 +37,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
       initView();
-       // Toast.makeText(this, ""+Contents.favourName, Toast.LENGTH_SHORT).show();
-           view2.setText("AED");
+
+
         getDataFromMain();
         setDataToTV();
         if(nameOut3 !=null){onNumberClick(postionIn,postionOut3,textOut3);}
@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
     private void getDataFromMain() {
 
         if(Contents.select==1) {
+
             nameOut=Contents.nameOut;
             postionOut=Contents.posOut;
             nameOut3=Contents.nameOut3;
@@ -76,6 +77,8 @@ public class HomeActivity extends AppCompatActivity {
             Contents.nameIn = getIntent().getStringExtra("name");
             postionIn = getIntent().getIntExtra("pos", -1);
             Contents.posIn=getIntent().getIntExtra("pos", -1);
+
+
         }
         else if (Contents.select == 2){
             nameIn=Contents.nameIn;
@@ -88,6 +91,7 @@ public class HomeActivity extends AppCompatActivity {
             Contents.posOut = getIntent().getIntExtra("pos", -1);
         }
         else {
+            div3.setVisibility(LinearLayout.VISIBLE);
             nameIn = Contents.nameIn;
             postionIn = Contents.posIn;
             nameOut = Contents.nameOut;
@@ -129,6 +133,7 @@ public class HomeActivity extends AppCompatActivity {
         public void onRevClick(View view){
         Button rev = ((Button) view);
         if(Contents.reverceCase == 1) {
+
             nameIn = Contents.nameOut;
             postionIn = Contents.posOut;
 
@@ -141,14 +146,17 @@ public class HomeActivity extends AppCompatActivity {
 
             onNumberClick(postionIn,postionOut3,textOut3);
             onNumberClick(postionIn,postionOut,textOut);
+
         }
         else{
-            Toast.makeText(this, "caseeeee"+222222, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "caseeeee"+222222, Toast.LENGTH_SHORT).show();
             nameIn = Contents.nameOut;
             postionIn = Contents.posOut;
 
             nameOut = Contents.nameIn;
             postionOut = Contents.posIn;
+
+            nameOut3 = null;
             onNumberClick(postionIn,postionOut,textOut);
         }
 
@@ -181,6 +189,7 @@ public class HomeActivity extends AppCompatActivity {
     public void addCurrency(View view){
         Button add = ((Button) view);
         Contents.reverceCase = 1;
+          div3.setVisibility(LinearLayout.VISIBLE);
 
         startActivity(new Intent(HomeActivity.this,MainActivity.class));
         Contents.select =3;
@@ -191,7 +200,7 @@ public class HomeActivity extends AppCompatActivity {
            title3.setText(null);
            textOut3.setText(null);
            view3.setText(null);
-           div3.setBackgroundColor(R.color.color_white);
+          div3.setVisibility(LinearLayout.GONE);
 
        }
 

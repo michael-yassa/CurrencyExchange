@@ -44,7 +44,7 @@ public class Contents {
     //1 mean add anther currency  2 mean clear crrency
     public static int reverceCase;
     public static String nameIn;
-    public static String nameOut;
+    public static String nameOut =  "AED" ;
     public static String nameOut3;
     public static int posIn;
     public static int posOut;
