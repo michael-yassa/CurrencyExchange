@@ -27,7 +27,7 @@
             android:text="@string/from"
             android:textSize="24sp"
 
-            app:layout_constraintHeight_percent=".25"
+            app:layout_constraintHeight_percent=".15"
             app:layout_constraintTop_toTopOf="parent"
             android:textColor="#000"
             android:textAlignment="center"
@@ -46,11 +46,20 @@
             android:textAlignment="center"
             android:textStyle="bold"
             android:textSize="32sp"
-            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintHeight_percent=".4"
             app:layout_constraintStart_toStartOf="parent"
 
             app:layout_constraintTop_toBottomOf="@id/title_in"
 
+            />
+        <TextView
+            android:id="@+id/arabic_output"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".15"
+            app:layout_constraintTop_toBottomOf="@id/view1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             />
 
         <TextView
@@ -64,7 +73,8 @@
             android:textStyle="bold"
             app:layout_constraintHeight_percent=".3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view1" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/arabic_output" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -91,7 +101,7 @@
             android:text="TO"
 
             android:textSize="24sp"
-            app:layout_constraintHeight_percent=".25"
+            app:layout_constraintHeight_percent=".15"
             app:layout_constraintTop_toTopOf="parent"
             android:textColor="#000"
             android:textAlignment="center"
@@ -109,9 +119,20 @@
             android:textColor="#000"
             android:textAlignment="center"
             android:textStyle="bold"
-            app:layout_constraintHeight_percent=".5"
+            app:layout_constraintHeight_percent=".4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_out" />
+
+
+        <TextView
+            android:id="@+id/arabic_input"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".15"
+            app:layout_constraintTop_toBottomOf="@id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
         <TextView
             android:id="@+id/textout"
@@ -126,7 +147,8 @@
             android:textStyle="bold"
 
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view2" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/arabic_input" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -184,7 +206,7 @@
         android:layout_height="0dp"
 
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/sign"
 
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -467,6 +489,14 @@
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/div4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="Design By EGYTEC"/>
 
 
 
