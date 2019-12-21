@@ -19,13 +19,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent=".5">
 
+
+
+        <androidx.cardview.widget.CardView
+             android:id="@+id/card1"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="5dp"
+            app:cardCornerRadius="8dp"
+            >
+            <ImageView
+                android:id="@+id/icon_in"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.cardview.widget.CardView>
+
+
         <TextView
             android:id="@+id/title_in"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:gravity="center"
             android:text="@string/from"
-            android:textSize="24sp"
+            android:textSize="12sp"
 
             app:layout_constraintHeight_percent=".15"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,27 +55,31 @@
 
             />
 
+
         <TextView
             android:id="@+id/view1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
 
+            android:layout_marginStart="8dp"
             android:gravity="center"
             android:onClick="onImageClick1"
-            android:textColor="#000"
             android:textAlignment="center"
-            android:textStyle="bold"
+            android:textColor="#000"
             android:textSize="32sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
             app:layout_constraintHeight_percent=".4"
+
             app:layout_constraintStart_toStartOf="parent"
-
-            app:layout_constraintTop_toBottomOf="@id/title_in"
-
-            />
+            app:layout_constraintTop_toBottomOf="@id/title_in" />
         <TextView
-            android:id="@+id/arabic_output"
+            android:id="@+id/arabic_in"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:gravity="center"
             app:layout_constraintHeight_percent=".15"
             app:layout_constraintTop_toBottomOf="@id/view1"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +98,7 @@
             app:layout_constraintHeight_percent=".3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/arabic_output" />
+            app:layout_constraintTop_toBottomOf="@id/arabic_in" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -93,6 +117,7 @@
 
         app:layout_constraintWidth_percent=".5">
 
+
         <TextView
             android:id="@+id/title_out"
             android:layout_width="match_parent"
@@ -100,7 +125,7 @@
             android:gravity="center"
             android:text="TO"
 
-            android:textSize="24sp"
+            android:textSize="12sp"
             app:layout_constraintHeight_percent=".15"
             app:layout_constraintTop_toTopOf="parent"
             android:textColor="#000"
@@ -115,7 +140,7 @@
             android:gravity="center"
             android:onClick="onImageClick2"
             android:textSize="32sp"
-            android:text="AED"
+
             android:textColor="#000"
             android:textAlignment="center"
             android:textStyle="bold"
@@ -124,10 +149,28 @@
             app:layout_constraintTop_toBottomOf="@id/title_out" />
 
 
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="5dp"
+            app:cardCornerRadius="8dp"
+            >
+        <ImageView
+            android:id="@+id/icon_out"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+        </androidx.cardview.widget.CardView>
         <TextView
-            android:id="@+id/arabic_input"
+            android:id="@+id/arabic_out"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:gravity="center"
             app:layout_constraintHeight_percent=".15"
             app:layout_constraintTop_toBottomOf="@id/view2"
             app:layout_constraintStart_toStartOf="parent"
@@ -148,19 +191,20 @@
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/arabic_input" />
+            app:layout_constraintTop_toBottomOf="@id/arabic_out" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/div3"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="100"
+        android:onClick="addCurrency"
         android:visibility="gone"
 
+
+        android:weightSum="100"
         app:layout_constraintTop_toBottomOf="@id/div1">
 
         <TextView
@@ -169,11 +213,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="15"
+            android:background="@color/colorAccent"
             android:textAlignment="center"
             android:textColor="#000"
-            android:textSize="32dp"
-            android:textStyle="bold"
-            />
+            android:textSize="12dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/view3"
@@ -183,8 +227,7 @@
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="32sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textout3"
@@ -195,11 +238,36 @@
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="24sp"
-            android:textStyle="bold"
-           />
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/icon_out3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+        </androidx.cardview.widget.CardView>
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+    <TextView
+        android:id="@+id/arabic_out3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/div3"
 
+        />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/div4"
         android:layout_width="match_parent"
@@ -212,7 +280,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/div3"
+        app:layout_constraintTop_toBottomOf="@id/arabic_out3"
         app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
